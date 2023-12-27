@@ -1,0 +1,126 @@
+* {
+    margin: 0px; padding: 0px;
+    font-family: verdana;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+h4 {
+    line-height: 30px;
+}
+
+header {
+    width: 100%;
+    border-bottom: 1px black solid;
+}
+#inner_box {
+    width: 1180px; height: 120px; margin: 0px auto;
+}
+#inner_box .above {
+    width: 1180px; height: 60px;
+}
+#inner_box .below {
+    width: 1180px; height: 60px;
+    position: relative;
+}
+#inner_box .above ul {
+    float: right; position: relative;
+    top: 20px; right: 30px;
+}
+#inner_box .above ul > li {
+    display: inline; padding: 0px 10px;
+}
+#inner_box .above ul > li > a {
+    font-size: 12px; color: darkgray;
+}
+#inner_box .below > h1 {
+    position: absolute;
+    left: 10px; bottom: 15px; 
+}
+#inner_box .below ul {
+    float: right; position: absolute;
+    right: 0px; bottom: 0px;
+}
+#inner_box .below ul > li {
+    display: inline-block;
+    padding: 15px 35px;
+}
+#inner_box .below ul > li > a {
+    font-size: 18px; color: black;
+}
+#inner_box .below ul > li:hover {
+    background-color: darkgray;
+}
+#inner_box .below ul > li > a:hover {
+    color: white;
+}
+
+#main {
+    width: 100%; height: 590px;
+    background-image: url("Resources/bg_main.png");
+}
+#main .inner {
+    width: 800px; height: 300px; margin: 0px auto;
+    font-size: 25px;    color: white;
+    position: relative;
+    top: 150px;
+}
+#main .inner > span {
+    font-size: 80px;
+}
+
+section {
+    width: 1180px; height: 450px; margin: 0px auto; 
+    position: relative;
+}
+#upper {
+    width: 1180px; height: 100px;
+}
+#upper h3 {
+    width: 151.77px; height: 23px; margin: 0px auto; 
+    padding: 40px 0px 0px 0px;
+}
+section > article {
+    width: 230px; height: 350px; margin: 0px calc(260px/6);
+    float: left;
+}
+section > article:nth-child(2) {
+    margin: 0px calc(260px/6) 0px 0px;
+}
+section > article:nth-child(5) {
+    margin: 0px 0px 0px calc(260px/6);
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(57, 62, 67);
+}
+#inner_footer {
+    width: 1000px; height: 100px; margin: 0px auto;
+    color: gray;
+    position: relative;
+}
+#inner_footer > h1 {
+    float: left;
+    position: absolute; left: 10px; bottom: 15px;
+}
+#inner_footer ul {
+    float: right;
+    position: absolute; right: 20px; bottom: 15px;
+}
+#inner_footer ul > li {
+    display: inline-block; padding: 0px 20px;
+    border-right: 2px gray solid;
+}
+#inner_footer ul > li:nth-child(4){
+    border: none;
+}
+#inner_footer ul > li > a {
+    color: gray;
+}
+#inner_footer ul > li > a:hover {
+    color: white;
+}
