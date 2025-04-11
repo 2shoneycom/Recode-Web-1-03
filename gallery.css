@@ -15,6 +15,7 @@ header {
     border-bottom: 1px solid black;
     position: fixed;
     background-color: white;
+    z-index: 1;
 }
 .logo_text {
     position: absolute;
