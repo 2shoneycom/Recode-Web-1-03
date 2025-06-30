@@ -1,0 +1,163 @@
+@mixin block-sizing ($width: null, $height: null) {
+    display: block;
+    width: $width;
+    height: $height;
+}
+
+@mixin margin-align ($top-margin: 0px, $bottom-margin: -1) {
+    @if ($bottom-margin !=-1) {
+        margin: $top-margin auto $bottom-margin;
+    }
+
+    @else {
+        margin: $top-margin auto;
+    }
+}
+
+@mixin position ($position: absolute, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin font-setting ($font_size: null, $font_weight: null, $color: null, $line_height: null) {
+    font-size: $font_size;
+    font-weight: $font_weight;
+    color: $color;
+    line-height: $line_height;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font: verdana;
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo_text {
+    @include position($left: 10px, $bottom: 15px);
+}
+
+div.inner_box {
+    position: relative;
+    @include block-sizing(1180px, 120px);
+    @include margin-align();
+
+    ul.nav_bar {
+        @include position($right: 0px, $bottom: 0px);
+
+        li {
+            a {
+                margin: 0px 20px;
+                text-align: center;
+                @include block-sizing(150px, 50px);
+                @include font-setting($font_size: 20px, $color: black, $line_height: 50px);
+
+                &:hover {
+                    color: white;
+                    background-color: gray;
+                }
+            }
+        }
+    }
+
+    ul.utility_bar {
+        @include position($right: 30px, $top: 20px);
+
+        li {
+            margin: 0px 10px;
+
+            a {
+                color: gray;
+            }
+        }
+    }
+}
+
+#main_image {
+    background-size: contain;
+    overflow: hidden; // 마진 겹침 제거
+    @include block-sizing(100%, 590px);
+
+    .inner_box {
+        @include block-sizing(800px, 300px);
+        @include margin-align(150px, 0px);
+        @include font-setting($font_size: 25px, $color: white);
+
+        .title {
+            @include font-setting($font_size: 80px, $font_weight: 1000);
+        }
+    }
+}
+
+section {
+    @include block-sizing(1180px, 450px);
+    @include margin-align();
+
+    div.title {
+        text-align: center;
+        @include block-sizing(100%, 100px);
+        @include font-setting($font_size: 20px, $font_weight: 800, $line_height: 100px);
+    }
+
+    article {
+        float: left;
+        margin-right: calc(260px/3);
+        @include block-sizing(230px, 350px);
+
+        &:last-child {
+            margin-right: 0px;
+        }
+
+        h3 {
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(23, 23, 49);
+    @include font-setting($color: rgb(137, 137, 137));
+
+    .info_box {
+        position: relative;
+        @include block-sizing(1000px, 100px);
+        @include margin-align();
+
+        p {
+            margin-top: 50px;
+        }
+    }
+
+    .inner_box {
+        ul.menu_bar {
+            @include position(absolute, $right: 20px, $bottom: 15px);
+
+            li {
+                display: inline-block;
+                float: none;
+                margin-left: 30px;
+                padding-left: 30px;
+                border-left: 1px solid rgb(137, 137, 137);
+                text-align: center;
+
+                a {
+                    @include font-setting($color: rgb(137, 137, 137));
+                }
+            }
+        }
+    }
+}
