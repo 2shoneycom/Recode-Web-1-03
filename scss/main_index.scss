@@ -1,0 +1,149 @@
+@use 'sass:list';
+@use 'lib';
+
+* {
+  @include lib.margin-set(lib.$univ-m);
+  @include lib.padding-set(lib.$univ-p);
+  @include lib.font-setting(lib.$univ-font);
+  box-sizing: lib.$univ-sizing;
+}
+
+li {
+  @include lib.details-setting(lib.$univ-list-details);
+}
+
+a {
+  @include lib.details-setting(lib.$univ-anchor-details);
+}
+
+header {
+  @include lib.block-set(width, lib.$header-w);
+  @include lib.border-setting(lib.$header-border);
+  @include lib.bg-color-set(lib.$header-bg-color);
+
+  .inner_box {
+    @include lib.block-set(width, lib.$inner-w);
+    @include lib.block-set(height, lib.$inner-h);
+    @include lib.margin-center;
+    @include lib.pos-set(lib.$inner-pos);
+
+    .logo_text {
+      @include lib.pos-set(lib.$logo-pos);
+      @include lib.posVal-setting(lib.$logo-posVal);
+    }
+
+    .nav_bar {
+      @include lib.pos-set(lib.$nav-pos);
+      @include lib.posVal-setting(lib.$nav-posVal);
+
+      li a {
+        @include lib.block-set(width, lib.$nav-a-w);
+        @include lib.block-set(height, lib.$nav-a-h);
+        @include lib.margin-set(lib.$nav-a-m);
+        @include lib.font-setting(lib.$nav-a-font);
+
+        &:hover {
+          @include lib.bg-color-set(lib.$nav-a-hover-bg-color);
+          @include lib.font-setting(lib.$nav-a-hover-font);
+        }
+      }
+    }
+
+    .utility_bar {
+      @include lib.pos-set(lib.$util-pos);
+      @include lib.posVal-setting(lib.$util-posVal);
+
+      li {
+        @include lib.margin-set(lib.$util-li-m);
+
+        a {
+          @include lib.font-setting(lib.$util-a-font);
+        }
+      }
+    }
+  }
+}
+
+
+#main_image {
+  @include lib.block-set(width, lib.$main-w);
+  @include lib.block-set(height, lib.$main-h);
+  @include lib.details-setting(lib.$main-details);
+
+  .inner_box {
+    @include lib.block-set(width, lib.$main-inner-w);
+    @include lib.block-set(height, lib.$main-inner-h);
+    @include lib.margin-center(calc(lib.$main-inner-h / 2));
+    @include lib.font-setting(lib.$main-inner-font);
+
+    .title {
+      @include lib.font-setting(lib.$main-inner-title-font);
+    }
+  }
+}
+
+section {
+  @include lib.block-set(width, lib.$isection-w);
+  @include lib.block-set(height, lib.$isection-h);
+  @include lib.margin-center;
+
+  .title {
+    @include lib.block-set(width, lib.$isection-title-w);
+    @include lib.block-set(height, lib.$isection-title-h);
+    @include lib.font-setting(lib.$isection-title-font);
+  }
+
+  @for $i from 1 through lib.$isection-article-cnt {
+    article:nth-child(#{$i+1}) {
+      @include lib.block-set(width, lib.$isection-article-w);
+      @include lib.block-set(height, lib.$isection-article-h);
+      @include lib.margin-set(list.nth(lib.$isection-article-m-list, $i));
+      @include lib.details-setting(lib.$isection-article-details);
+
+      h3 {
+        @include lib.block-set(height, lib.$isection-article-h3-h);
+        @include lib.font-setting(lib.$isection-article-h3-font);
+      }
+    }
+  }
+}
+
+footer {
+  @include lib.block-set(width, lib.$footer-w);
+  @include lib.bg-color-set(lib.$footer-bg-color);
+  @include lib.font-setting(lib.$footer-font);
+
+  .inner_box {
+    @include lib.block-set(width, lib.$footer-inner-w);
+    @include lib.block-set(height, lib.$footer-inner-h);
+    @include lib.margin-center;
+    @include lib.pos-set(lib.$footer-inner-pos);
+
+    .menu_bar {
+      @include lib.pos-set(lib.$footer-menu-pos);
+      @include lib.posVal-setting(lib.$footer-menu-posVal);
+
+      li {
+        @include lib.display-set(lib.$footer-menu-li-display);
+        @include lib.margin-set(lib.$footer-menu-li-m);
+        @include lib.padding-set(lib.$footer-menu-li-p);
+        @include lib.border-setting(lib.$footer-menu-li-border);
+        @include lib.details-setting(lib.$footer-menu-li-details);
+        
+        a {
+          @include lib.font-setting(lib.$footer-menu-li-a-font);
+        }
+      }
+    }
+  }
+
+  .info_box {
+    @include lib.block-set(width, lib.$footer-info-w);
+    @include lib.block-set(height, lib.$footer-info-h);
+    @include lib.margin-center;
+
+    p {
+      @include lib.margin-set(lib.$footer-info-p-m);
+    }
+  }
+}

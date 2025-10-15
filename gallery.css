@@ -1,127 +1,201 @@
+/*
 * {
-    margin: 0px; padding: 0px;
-    font: verdana;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font: verdana;
+  box-sizing: border-box;
 }
+
 li {
-    list-style-type: none;
-    float: left;
+  list-style-type: none;
+  float: left;
 }
+
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
+*/
+/*
 header {
-    width: 100%;
-    border-bottom: 1px solid black;
-    position: fixed;
-    background-color: white;
-    z-index: 1;
-}
-.logo_text {
-    position: absolute;
-    left: 10px; bottom: 15px;
-}
-header>div.inner_box {
-    width: 1180px; height: 120px; margin: 0px auto;
-    position: relative;
-}
+  width: 100%;
+  border-bottom: 1px solid black;
+  position: fixed;
+  background-color: white;
+  z-index: 1;
+}*/
+
+/*
+header div.inner_box {
+  width: 1180px;
+  height: 120px;
+  margin: 0px auto;
+  position: relative;
+}*/
+
+/*
+header div.inner_box .logo_text {
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+}*/
+
+/*
 header div.inner_box ul.nav_bar {
-    position: absolute;
-    right: 0px; bottom: 0px;
-}
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}*/
+
+/*
 header div.inner_box ul.utility_bar {
-    position: absolute;
-    right: 30px; top: 20px;
-}
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}*/
+
+/*
 ul.nav_bar li a {
-    display: block; 
-    width: 150px; height: 50px; margin: 0px 20px;
-    text-align: center;
-    font-size: 20px; line-height: 50px;
-    color: black;
-}
+  display: block;
+  width: 150px;
+  height: 50px;
+  margin: 0px 20px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 50px;
+  color: black;
+}*/
+/*
 ul.nav_bar li a:hover {
-    color: white;
-    background-color: gray;
-}
+  color: white;
+  background-color: gray;
+}*/
+/*
 ul.utility_bar li {
-    margin: 0px 10px;
+  margin: 0px 10px;
 }
+
 ul.utility_bar li a {
-    color: gray;
-}
+  color: gray;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+/* section 파트 */
+/*
 section {
-    width: 1000px; margin: 0px auto; padding-top: 120px;
-}
+  width: 1000px;
+
+  margin: 0px auto;
+
+  padding-top: 120px;
+}*/
+/*
 section article {
-    float: left;
-    position: relative;
-    color: white;
-}
+  float: left;
+
+  position: relative;
+
+  color: white;
+}*/
+/*
 section .art1 {
-    width: 700px; height: 400px;
-    margin: 10px 10px 10px 0px;
+  width: 700px;
+  height: 400px;
+  margin: 10px 10px 10px 0px;
 }
 section .art2 {
-    width: 290px; height: 190px;
-    margin: 10px 0px;
+  width: 290px;
+  height: 190px;
+  margin: 10px 0px;
 }
 section .art3 {
-    width: 290px; height: 95px;
-    margin-bottom: 10px;
+  width: 290px;
+  height: 95px;
+  margin-bottom: 10px;
 }
-section div.art4_containor {
-    width: 500px; height: 500px; float: left;
+section div.container_4 {
+  width: 500px;
+
+  float: left;
 }
 section .art4 {
-    width: 490px; height: 240px;
-    margin-bottom: 10px;
+  width: 490px;
+  height: 240px;
+
+  margin-bottom: 10px;
 }
 section .art5 {
-    width: 500px; height: 490px;
-    margin-bottom: 10px;
+  width: 500px;
+  height: 490px;
+
+  margin-bottom: 10px;
 }
 section .art6 {
-    width: 1000px; height: 371px;
-    margin-bottom: 10px;
+  width: 1000px;
+  height: 371px;
+
+  margin-bottom: 10px;
 }
 section .art7 {
-    width: 1000px; height: 361px;
-    margin-bottom: 50px;
+  width: 1000px;
+  height: 361px;
+  
+  margin-bottom: 50px;
 }
 .art1 p {
-    position: absolute;
-    right: 10px; bottom: 10px;
-    font-size: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 30px;
 }
 .art2 p {
-    position: absolute;
-    top: 50px; left: 10px;
+  position: absolute;
+  top: 50px;
+  left: 10px;
 }
 .art3 p {
-    position: absolute;
-    right: 10px; bottom: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
 }
 .art4:nth-child(odd) p {
-    width: 300px;
-    margin: 160px auto 0px;
-    color: black;
+  position: static;
+  width: 300px;
+  margin: 160px auto 0px;
+  color: black;
 }
 .art4:nth-child(even) p {
-    position: absolute;
-    right: 20px; bottom: 30px;
-    font-size: 30px; color: gold;
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+  font-size: 30px;
+  color: gold;
 }
 .art6 p {
-    font-size: 50px; text-align: center; line-height: 371px;
-    text-shadow: 3px 3px 3px black;
+  position: static;
+  font-size: 50px;
+  text-align: center;
+  line-height: 371px;
+  text-shadow: 3px 3px 3px black;
 }
 .art7 p {
-    width: 450px; height: 150px;
-    position: absolute;
-    right: 30px; bottom: 40px;
-    font-size: 20px;
-}
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
+  width: 450px;
+  height: 150px;
+  font-size: 20px;
+}*/
+/*
 .art7 p span {
-    font-size: 30px;
-}
+  font-size: 30px;
+}*/

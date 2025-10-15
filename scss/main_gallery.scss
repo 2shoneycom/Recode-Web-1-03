@@ -1,0 +1,129 @@
+@use 'sass:list';
+@use 'lib';
+
+* {
+  @include lib.margin-set(lib.$univ-m);
+  @include lib.padding-set(lib.$univ-p);
+  @include lib.font-setting(lib.$univ-font);
+  box-sizing: lib.$univ-sizing;
+}
+
+li {
+  @include lib.details-setting(lib.$univ-list-details);
+}
+
+a {
+  @include lib.details-setting(lib.$univ-anchor-details);
+}
+
+header {
+  @include lib.block-set(width, lib.$header-w);
+  @include lib.border-setting(lib.$header-border);
+  @include lib.pos-set(lib.$header-pos);
+  @include lib.zIndex-set(lib.$header-z);
+  @include lib.bg-color-set(lib.$header-bg-color);
+
+  .inner_box {
+    @include lib.block-set(width, lib.$inner-w);
+    @include lib.block-set(height, lib.$inner-h);
+    @include lib.margin-center;
+    @include lib.pos-set(lib.$inner-pos);
+
+    .logo_text {
+      @include lib.pos-set(lib.$logo-pos);
+      @include lib.posVal-setting(lib.$logo-posVal);
+    }
+
+    .nav_bar {
+      @include lib.pos-set(lib.$nav-pos);
+      @include lib.posVal-setting(lib.$nav-posVal);
+
+      li a {
+        @include lib.block-set(width, lib.$nav-a-w);
+        @include lib.block-set(height, lib.$nav-a-h);
+        @include lib.margin-set(lib.$nav-a-m);
+        @include lib.font-setting(lib.$nav-a-font);
+
+        &:hover {
+          @include lib.bg-color-set(lib.$nav-a-hover-bg-color);
+          @include lib.font-setting(lib.$nav-a-hover-font);
+        }
+      }
+    }
+
+    .utility_bar {
+      @include lib.pos-set(lib.$util-pos);
+      @include lib.posVal-setting(lib.$util-posVal);
+
+      li {
+        @include lib.margin-set(lib.$util-li-m);
+
+        a {
+          @include lib.font-setting(lib.$util-a-font);
+        }
+      }
+    }
+  }
+}
+
+section {
+  width: lib.$section-w;
+  padding-top: lib.$header-h;
+  @include lib.margin-center;
+
+  article {
+    float: left;
+    position: relative;
+    color: white;
+  }
+
+  // set .art#n class width, height
+  $cnt_articles: list.length(lib.$article-m-list);
+
+  @for $i from 1 through $cnt_articles {
+    .art#{$i} {
+      @include lib.block-set(width, list.nth(lib.$article-w, $i));
+      @include lib.block-set(height, list.nth(lib.$article-h, $i));
+      @include lib.margin-set(list.nth(lib.$article-m-list, $i));
+
+      $pos-list: list.nth(lib.$article-p-pos-list, $i);
+      $pos-val-list: list.nth(lib.$article-p-posVal-list, $i);
+      $p-details: list.nth(lib.$article-p-details, $i);
+      $p-span-details: list.nth(lib.$article-p-span-details, $i);
+
+      $cnt_sub_articles: list.length($pos-list);
+
+      @if $cnt_sub_articles > 1 {
+        @for $j from 1 through $cnt_sub_articles {
+          &:nth-child(#{$j}) p {
+            @include lib.pos-set(list.nth($pos-list, $j));
+            @include lib.posVal-setting(list.nth($pos-val-list, $j));
+            @include lib.details-setting(list.nth($p-details, $j));
+
+            span {
+              @include lib.details-setting($p-span-details);
+            } 
+          }
+        }
+      }
+      @else {
+        p {
+          @include lib.pos-set($pos-list);
+          @include lib.posVal-setting($pos-val-list);
+          @include lib.details-setting($p-details);
+
+          span {
+            @include lib.details-setting($p-span-details);
+          }
+        }
+      }
+    }
+
+    @if list.nth(lib.$article-container-necessary, $i)==1 {
+      .container_#{$i} {
+        @include lib.block-set(width, calc(list.nth(lib.$article-w, $i) + lib.$article-gap));
+        float: left;
+      }
+    }
+  }
+}

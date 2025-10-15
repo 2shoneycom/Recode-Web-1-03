@@ -1,3 +1,4 @@
+/*
 * {
   margin: 0px;
   padding: 0px;
@@ -14,128 +15,170 @@ a {
   text-decoration: none;
 }
 
-.logo_text {
-  position: absolute;
-  bottom: 15px;
-  left: 10px;
+header {
+  width: 100%;
+  background-color: white;
 }
 
-div.inner_box {
-  position: relative;
-  display: block;
+.logo_text {
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+}
+
+header>div.inner_box {
   width: 1180px;
   height: 120px;
   margin: 0px auto;
+  position: relative;
 }
-div.inner_box ul.nav_bar {
+
+header div.inner_box ul.nav_bar {
   position: absolute;
   right: 0px;
   bottom: 0px;
 }
-div.inner_box ul.nav_bar li a {
-  margin: 0px 20px;
-  text-align: center;
+
+header div.inner_box ul.utility_bar {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+
+ul.nav_bar li a {
   display: block;
   width: 150px;
   height: 50px;
+  margin: 0px 20px;
+  text-align: center;
   font-size: 20px;
-  color: black;
   line-height: 50px;
+  color: black;
 }
-div.inner_box ul.nav_bar li a:hover {
+
+ul.nav_bar li a:hover {
   color: white;
   background-color: gray;
 }
-div.inner_box ul.utility_bar {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-}
-div.inner_box ul.utility_bar li {
+
+ul.utility_bar li {
   margin: 0px 10px;
 }
-div.inner_box ul.utility_bar li a {
+
+ul.utility_bar li a {
   color: gray;
 }
+*/  
 
+/*
 #main_image {
-  background-size: contain;
-  overflow: hidden;
-  display: block;
   width: 100%;
   height: 590px;
+  background-size: contain;
+  overflow: hidden;
 }
+*/
+
+/*
 #main_image .inner_box {
-  display: block;
   width: 800px;
   height: 300px;
   margin: 150px auto 0px;
   font-size: 25px;
   color: white;
 }
+*/
+/*
 #main_image .inner_box .title {
   font-size: 80px;
   font-weight: 1000;
 }
-
+*/
+/*
 section {
-  display: block;
   width: 1180px;
   height: 450px;
   margin: 0px auto;
 }
+*/
+/*
 section div.title {
-  text-align: center;
-  display: block;
   width: 100%;
   height: 100px;
+  text-align: center;
   font-size: 20px;
   font-weight: 800;
   line-height: 100px;
 }
+*/
+/*
 section article {
-  float: left;
-  margin-right: 86.6666666667px;
-  display: block;
   width: 230px;
   height: 350px;
+  margin-right: calc(260px/3);
+  float: left;
 }
+
 section article:last-child {
   margin-right: 0px;
 }
+
 section article h3 {
   height: 40px;
   line-height: 40px;
 }
-
+*/
+/*
 footer {
   width: 100%;
   background-color: rgb(23, 23, 49);
   color: rgb(137, 137, 137);
 }
-footer .info_box {
-  position: relative;
-  display: block;
+*/
+/*
+footer .inner_box {
   width: 1000px;
   height: 100px;
   margin: 0px auto;
+  position: relative;
 }
-footer .info_box p {
-  margin-top: 50px;
+*/
+/*
+footer .info_box {
+  width: 1000px;
+  height: 200px;
+  margin: 0px auto;
 }
+*/
+/*
 footer .inner_box ul.menu_bar {
   position: absolute;
   right: 20px;
   bottom: 15px;
 }
-footer .inner_box ul.menu_bar li {
+*/
+/*
+footer ul.menu_bar li {
   display: inline-block;
-  float: none;
+
   margin-left: 30px;
+
   padding-left: 30px;
+
   border-left: 1px solid rgb(137, 137, 137);
+
   text-align: center;
+
+  float: none;
 }
-footer .inner_box ul.menu_bar li a {
+*/
+/*
+footer ul.menu_bar li a {
   color: rgb(137, 137, 137);
-}/*# sourceMappingURL=index.css.map */
+}
+*/
+/*
+footer .info_box p {
+  margin-top: 50px;
+}
+*/

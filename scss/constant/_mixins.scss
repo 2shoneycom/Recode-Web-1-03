@@ -1,0 +1,70 @@
+@use 'sass:list';
+@use 'sass:map';
+
+@mixin posVal-setting($pos-val) {
+  top: list.nth($pos-val, 1);
+  right: list.nth($pos-val, 2);
+  bottom: list.nth($pos-val, 3);
+  left: list.nth($pos-val, 4);
+}
+
+@mixin font-setting($map-values) {
+  font: map.get($map-values, style);
+  font-size: map.get($map-values, size);
+  font-weight: map.get($map-values, weight);
+  color: map.get($map-values, color);
+  line-height: map.get($map-values, height);
+  text-align: map.get($map-values, align);
+}
+
+@mixin display-set($val) {
+  display: $val;
+}
+
+@mixin pos-set($val) {
+  position: $val;
+}
+
+@mixin zIndex-set($val) {
+  z-index: $val;
+}
+
+@mixin block-set($prop, $val) {
+  display: block;
+  #{$prop}: $val;
+}
+
+@mixin margin-set($val) {
+  margin: #{$val};
+}
+
+@mixin padding-set($val) {
+  padding: #{$val};
+}
+
+@mixin margin-center($top-margin: 0px, $bot-margin: 0px) {
+  margin: $top-margin auto $bot-margin;
+}
+
+@mixin details-setting($details-map) {
+  @each $property, $value in $details-map {
+    // Sass will automatically convert lists without commas to space-separated values
+    #{$property}: $value;
+  }
+}
+
+@mixin border-setting($map-values) {
+  $val: map.get($map-values, val);
+  $dir: map.get($map-values, dir);
+  
+  @if $dir != null {
+    border-#{$dir}: $val;
+  }
+  @else {
+    border: $val;
+  }
+}
+
+@mixin bg-color-set($val) {
+  background-color: $val;
+}

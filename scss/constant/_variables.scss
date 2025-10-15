@@ -1,0 +1,208 @@
+// universal settings
+$univ-m: 0px;
+$univ-p: 0px;
+$univ-font: (style: verdana);
+$univ-sizing: border-box;
+$univ-list-details: (
+  list-style-type: none,
+  float: left,
+);
+$univ-anchor-details: (
+  text-decoration: none
+);
+
+// header values (header, inner, logo, ...)
+$header-w: 100%;
+$header-h: 120px;
+$header-border: (
+  dir: bottom,
+  val: 1px solid black,
+);
+$header-pos: fixed;
+$header-z: 1;
+$header-bg-color: white;
+$inner-w: 1180px;
+$inner-h: $header-h;
+$inner-pos: relative;
+$logo-pos: absolute;
+$logo-posVal: null null 15px 10px;
+$nav-pos: absolute;
+$nav-posVal: null 0px 0px null;
+$util-pos: absolute;
+$util-posVal: 20px 30px null null;
+$nav-a-w: 150px;
+$nav-a-h: $nav-a-w / 3;
+$nav-a-font: (
+  size: $nav-a-h / 5 * 2,
+  height: $nav-a-h,
+  color: black,
+  align: center,
+);
+$nav-a-m: 0px 20px;
+$nav-a-hover-font: (
+  color: white,
+);
+$nav-a-hover-bg-color: gray;
+$util-li-m: 0px 10px;
+$util-a-font: (
+  color: gray,
+);
+
+// index values
+$main-w: 100%;
+$main-h: 590px;
+$main-details: (
+  background-size: contain,
+  overflow: hidden, // for eliminating margin colllapsing
+);
+$main-inner-w: 800px;
+$main-inner-h: 300px;
+$main-inner-font: (
+  size: 25px,
+  color: white,
+);
+$main-inner-title-font: (
+  size: 80px,
+  weight: 1000,
+);
+
+$isection-w: 1180px;
+$isection-h: 450px;
+$isection-title-w: 100%;
+$isection-title-h: 100px;
+$isection-title-font: (
+  align: center,
+  size: 20px,
+  weight: 800,
+  height: $isection-title-h,
+);
+$isection-article-w: 230px;
+$isection-article-h: $isection-h - $isection-title-h;
+$isection-article-cnt: 4; // index.html의 section article 개수
+$isection-article-gap: ($isection-w - ($isection-article-cnt * $isection-article-w)) / ($isection-article-cnt - 1);
+$isection-article-m-list: (
+  (0px $isection-article-gap 0px 0px),
+  (0px $isection-article-gap 0px 0px),
+  (0px $isection-article-gap 0px 0px),
+  (0px 0px 0px 0px),
+);
+$isection-article-details: (
+  float: left,
+);
+$isection-article-h3-h: 40px;
+$isection-article-h3-font: (
+  height: $isection-article-h3-h,
+);
+
+$footer-w: 100%;
+$footer-bg-color: rgb(23, 23, 49);
+$footer-main-font-color: rgb(137, 137, 137);
+$footer-font: (
+  color: $footer-main-font-color,
+);
+$footer-inner-w: 1000px;
+$footer-inner-h: 100px;
+$footer-inner-pos: relative;
+$footer-info-w: $footer-inner-w;
+$footer-info-h: $footer-inner-h * 2;
+$footer-info-p-m: 50px 0px 0px 0px;
+$footer-menu-pos: absolute;
+$footer-menu-posVal: null 20px 15px null;
+$footer-menu-li-display: inline-block;
+$footer-menu-li-m: 0px 0px 0px 30px; 
+$footer-menu-li-p: 0px 0px 0px 30px; 
+$footer-menu-li-border: (
+  dir: left,
+  val: 1px solid $footer-main-font-color,
+);
+$footer-menu-li-font: (
+  align: center,
+);
+$footer-menu-li-details: (
+  float: none,
+);
+$footer-menu-li-a-font: (
+  color: $footer-main-font-color,
+);
+
+// gallery values
+$section-w: 1000px;
+
+$article-w: 700px 290px 290px 490px 500px 1000px 1000px;
+$article-h: 400px 190px 95px 240px 490px 371px 361px;
+$article-gap: calc($section-w - 990px);
+$article-basic-m: 10px;
+
+$article-m-list: (
+  (10px 0px 10px 0px),          // art#1's margin
+  (10px 0px 10px 10px),         // art#2's margin
+  (0px 0px 10px 10px),          // art#3's margin
+  (0px 0px 10px 0px),           // art#4's margin
+  (0px 0px 10px 0px),           // art#5's margin
+  (0px 0px 10px 0px),           // art#6's margin
+  (0px 0px 50px 0px),           // art#7's margin
+);
+
+$article-container-necessary: (
+  0,    // container need? art#1
+  0,    // container need? art#2
+  1,    // container need? art#3
+  1,    // container need? art#4
+  0,    // container need? art#5
+  0,    // container need? art#6
+  0,    // container need? art#7
+);
+
+$article-p-pos-list: (
+  absolute,           // (art#1 p)'s position
+  absolute,           // (art#2 p)'s position 
+  (absolute, static), // (art#3 p)'s position
+  (static, absolute), // (art#4 p)'s position
+  static,             // (art#5 p)'s position
+  static,             // (art#6 p)'s position
+  absolute,           // (art#7 p)'s position
+);
+
+$article-p-posVal-list: (
+// (top, right, bottom, left)
+  (null, 10px, 10px, null),   // (art#1 p)'s position value
+  (50px, null, null, 10px),   // (art#2 p)'s position value
+  (
+    (null, 10px, 20px, null), // (art#3-1 p)'s position value
+    (null, null, null, null), // (art#3-2 p)'s position value
+  ),   
+  (
+    (null, null, null, null), // (art#4-1 p)'s position value
+    (null, 20px, 30px, null), // (art#4-2 p)'s position value
+  ),
+  (null, null, null, null),   // (art#5 p)'s position value
+  (null, null, null, null),   // (art#6 p)'s position value
+  (null, 30px, 40px, null),   // (art#7 p)'s position value
+);
+
+// 그 외 세부 설정값들
+$article-p-details: (
+  (font-size: 30px),
+  null,
+  (
+    null,
+    null
+  ),
+  (
+    (width: 300px, margin: (160px auto 0px), color: black),
+    (font-size: 30px, color: gold)
+  ),
+  null,
+  (font-size: 50px, text-align: center, line-height: 371px, text-shadow: 3px 3px 3px black), // This must be a single value, not a list.
+  (width: 450px, height: 150px, font-size: 20px)
+);
+
+$article-p-span-details: (
+  null,             // art#1
+  null,             // art#2
+  null,             // art#3
+  null,             // art#4
+  null,             // art#5
+  null,             // art#6
+  (font-size: 30px) // art#7의 span 스타일
+);

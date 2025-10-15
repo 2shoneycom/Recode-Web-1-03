@@ -14,61 +14,63 @@ a {
   text-decoration: none;
 }
 
-.logo_text {
+header {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid black;
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+}
+header .inner_box {
+  display: block;
+  width: 1180px;
+  display: block;
+  height: 120px;
+  margin: 0px auto 0px;
+  position: relative;
+}
+header .inner_box .logo_text {
   position: absolute;
   bottom: 15px;
   left: 10px;
 }
-
-header {
-  width: 100%;
-  border-bottom: 1px solid black;
-  position: fixed;
-  background-color: white;
-  z-index: 1;
-}
-header div.inner_box {
-  position: relative;
-  display: block;
-  width: 1180px;
-  height: 120px;
-  margin: 0px auto;
-}
-header div.inner_box ul.nav_bar {
+header .inner_box .nav_bar {
   position: absolute;
   right: 0px;
   bottom: 0px;
 }
-header div.inner_box ul.nav_bar li a {
-  margin: 0px 20px;
-  text-align: center;
+header .inner_box .nav_bar li a {
   display: block;
   width: 150px;
+  display: block;
   height: 50px;
+  margin: 0px 20px;
   font-size: 20px;
   color: black;
   line-height: 50px;
+  text-align: center;
 }
-header div.inner_box ul.nav_bar li a:hover {
-  color: white;
+header .inner_box .nav_bar li a:hover {
   background-color: gray;
+  color: white;
 }
-header div.inner_box ul.utility_bar {
+header .inner_box .utility_bar {
   position: absolute;
   top: 20px;
   right: 30px;
 }
-header div.inner_box ul.utility_bar li {
+header .inner_box .utility_bar li {
   margin: 0px 10px;
 }
-header div.inner_box ul.utility_bar li a {
+header .inner_box .utility_bar li a {
   color: gray;
 }
 
 section {
   width: 1000px;
   padding-top: 120px;
-  margin: 0px auto;
+  margin: 0px auto 0px;
 }
 section article {
   float: left;
@@ -76,10 +78,11 @@ section article {
   color: white;
 }
 section .art1 {
-  margin: 10px 10px 10px 0px;
   display: block;
   width: 700px;
+  display: block;
   height: 400px;
+  margin: 10px 0px 10px 0px;
 }
 section .art1 p {
   position: absolute;
@@ -88,10 +91,11 @@ section .art1 p {
   font-size: 30px;
 }
 section .art2 {
-  margin: 10px 0px;
   display: block;
   width: 290px;
+  display: block;
   height: 190px;
+  margin: 10px 0px 10px 10px;
 }
 section .art2 p {
   position: absolute;
@@ -99,73 +103,89 @@ section .art2 p {
   left: 10px;
 }
 section .art3 {
-  margin-bottom: 10px;
   display: block;
   width: 290px;
+  display: block;
   height: 95px;
+  margin: 0px 0px 10px 10px;
 }
-section .art3 p {
+section .art3:nth-child(1) p {
   position: absolute;
   right: 10px;
   bottom: 20px;
 }
-section div.art4_containor {
-  float: left;
+section .art3:nth-child(2) p {
+  position: static;
+}
+section .container_3 {
   display: block;
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  float: left;
 }
 section .art4 {
-  margin-bottom: 10px;
   display: block;
   width: 490px;
+  display: block;
   height: 240px;
+  margin: 0px 0px 10px 0px;
 }
-section .art4:nth-child(odd) p {
+section .art4:nth-child(1) p {
+  position: static;
   width: 300px;
   margin: 160px auto 0px;
   color: black;
 }
-section .art4:nth-child(even) p {
+section .art4:nth-child(2) p {
   position: absolute;
   right: 20px;
   bottom: 30px;
   font-size: 30px;
   color: gold;
 }
-section .art5 {
-  margin-bottom: 10px;
+section .container_4 {
   display: block;
   width: 500px;
+  float: left;
+}
+section .art5 {
+  display: block;
+  width: 500px;
+  display: block;
   height: 490px;
+  margin: 0px 0px 10px 0px;
+}
+section .art5 p {
+  position: static;
 }
 section .art6 {
-  margin-bottom: 10px;
   display: block;
   width: 1000px;
+  display: block;
   height: 371px;
+  margin: 0px 0px 10px 0px;
 }
 section .art6 p {
-  text-align: center;
-  text-shadow: 3px 3px 3px black;
+  position: static;
   font-size: 50px;
+  text-align: center;
   line-height: 371px;
+  text-shadow: 3px 3px 3px black;
 }
 section .art7 {
-  margin-bottom: 50px;
   display: block;
   width: 1000px;
+  display: block;
   height: 361px;
+  margin: 0px 0px 50px 0px;
 }
 section .art7 p {
-  display: block;
-  width: 450px;
-  height: 150px;
   position: absolute;
   right: 30px;
   bottom: 40px;
+  width: 450px;
+  height: 150px;
   font-size: 20px;
 }
 section .art7 p span {
   font-size: 30px;
-}/*# sourceMappingURL=gallery_2.css.map */
+}/*# sourceMappingURL=main_gallery.css.map */
