@@ -1,19 +1,3 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  font: verdana;
-  box-sizing: border-box;
-}
-
-li {
-  list-style-type: none;
-  float: left;
-}
-
-a {
-  text-decoration: none;
-}
-
 header {
   display: block;
   width: 100%;
@@ -23,12 +7,16 @@ header {
 header .inner_box {
   display: block;
   width: 1180px;
-  display: block;
   height: 120px;
   margin: 0px auto 0px;
   position: relative;
 }
 header .inner_box .logo_text {
+  display: block;
+  width: auto;
+  height: auto;
+  font-size: 2em;
+  font-weight: bold;
   position: absolute;
   bottom: 15px;
   left: 10px;
@@ -41,7 +29,6 @@ header .inner_box .nav_bar {
 header .inner_box .nav_bar li a {
   display: block;
   width: 150px;
-  display: block;
   height: 50px;
   margin: 0px 20px;
   font-size: 20px;
@@ -68,7 +55,6 @@ header .inner_box .utility_bar li a {
 #main_image {
   display: block;
   width: 100%;
-  display: block;
   height: 590px;
   background-size: contain;
   overflow: hidden;
@@ -76,7 +62,6 @@ header .inner_box .utility_bar li a {
 #main_image .inner_box {
   display: block;
   width: 800px;
-  display: block;
   height: 300px;
   margin: 150px auto 0px;
   font-size: 25px;
@@ -90,14 +75,12 @@ header .inner_box .utility_bar li a {
 section {
   display: block;
   width: 1180px;
-  display: block;
   height: 450px;
   margin: 0px auto 0px;
 }
 section .title {
   display: block;
   width: 100%;
-  display: block;
   height: 100px;
   font-size: 20px;
   font-weight: 800;
@@ -107,7 +90,6 @@ section .title {
 section article:nth-child(2) {
   display: block;
   width: 230px;
-  display: block;
   height: 350px;
   margin: 0px 86.6666666667px 0px 0px;
   float: left;
@@ -120,7 +102,6 @@ section article:nth-child(2) h3 {
 section article:nth-child(3) {
   display: block;
   width: 230px;
-  display: block;
   height: 350px;
   margin: 0px 86.6666666667px 0px 0px;
   float: left;
@@ -133,7 +114,6 @@ section article:nth-child(3) h3 {
 section article:nth-child(4) {
   display: block;
   width: 230px;
-  display: block;
   height: 350px;
   margin: 0px 86.6666666667px 0px 0px;
   float: left;
@@ -146,7 +126,6 @@ section article:nth-child(4) h3 {
 section article:nth-child(5) {
   display: block;
   width: 230px;
-  display: block;
   height: 350px;
   margin: 0px 0px 0px 0px;
   float: left;
@@ -164,12 +143,11 @@ footer {
   color: rgb(137, 137, 137);
 }
 footer .inner_box {
+  position: relative;
   display: block;
   width: 1000px;
-  display: block;
   height: 100px;
   margin: 0px auto 0px;
-  position: relative;
 }
 footer .inner_box .menu_bar {
   position: absolute;
@@ -189,7 +167,6 @@ footer .inner_box .menu_bar li a {
 footer .info_box {
   display: block;
   width: 1000px;
-  display: block;
   height: 200px;
   margin: 0px auto 0px;
 }

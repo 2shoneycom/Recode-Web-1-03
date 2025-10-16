@@ -1,2 +1,3 @@
 @forward '../constant/variables';
-@forward '../constant/mixins'; 
+@forward '../constant/mixins';
+@forward '../component/header' hide header-configs, header-inner-configs, header-logo-configs, header-nav-configs, header-utitlity-configs;

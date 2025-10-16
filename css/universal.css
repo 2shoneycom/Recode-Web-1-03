@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Verdana, Geneva, sans-serif;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+* {
+  @include lib.margin-set(lib.$univ-m);
+  @include lib.padding-set(lib.$univ-p);
+  @include lib.font-setting(lib.$univ-font);
+  box-sizing: lib.$univ-sizing;
+}
+
+li {
+  @include lib.details-setting(lib.$univ-list-details);
+}
+
+a {
+  @include lib.details-setting(lib.$univ-anchor-details);
+}
+*//*# sourceMappingURL=universal.css.map */

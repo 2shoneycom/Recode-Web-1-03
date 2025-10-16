@@ -1,71 +1,10 @@
 @use 'sass:list';
 @use 'lib';
 
-* {
-  @include lib.margin-set(lib.$univ-m);
-  @include lib.padding-set(lib.$univ-p);
-  @include lib.font-setting(lib.$univ-font);
-  box-sizing: lib.$univ-sizing;
-}
+@include lib.import-header($fix_option: true);
 
-li {
-  @include lib.details-setting(lib.$univ-list-details);
-}
-
-a {
-  @include lib.details-setting(lib.$univ-anchor-details);
-}
-
-header {
-  @include lib.block-set(width, lib.$header-w);
-  @include lib.border-setting(lib.$header-border);
-  @include lib.pos-set(lib.$header-pos);
-  @include lib.zIndex-set(lib.$header-z);
-  @include lib.bg-color-set(lib.$header-bg-color);
-
-  .inner_box {
-    @include lib.block-set(width, lib.$inner-w);
-    @include lib.block-set(height, lib.$inner-h);
-    @include lib.margin-center;
-    @include lib.pos-set(lib.$inner-pos);
-
-    .logo_text {
-      @include lib.pos-set(lib.$logo-pos);
-      @include lib.posVal-setting(lib.$logo-posVal);
-    }
-
-    .nav_bar {
-      @include lib.pos-set(lib.$nav-pos);
-      @include lib.posVal-setting(lib.$nav-posVal);
-
-      li a {
-        @include lib.block-set(width, lib.$nav-a-w);
-        @include lib.block-set(height, lib.$nav-a-h);
-        @include lib.margin-set(lib.$nav-a-m);
-        @include lib.font-setting(lib.$nav-a-font);
-
-        &:hover {
-          @include lib.bg-color-set(lib.$nav-a-hover-bg-color);
-          @include lib.font-setting(lib.$nav-a-hover-font);
-        }
-      }
-    }
-
-    .utility_bar {
-      @include lib.pos-set(lib.$util-pos);
-      @include lib.posVal-setting(lib.$util-posVal);
-
-      li {
-        @include lib.margin-set(lib.$util-li-m);
-
-        a {
-          @include lib.font-setting(lib.$util-a-font);
-        }
-      }
-    }
-  }
-}
-
+// 해야할 것
+// 여기서부터 다시 만지기
 section {
   width: lib.$section-w;
   padding-top: lib.$header-h;

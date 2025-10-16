@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 // universal settings
 $univ-m: 0px;
 $univ-p: 0px;
@@ -11,7 +13,14 @@ $univ-anchor-details: (
   text-decoration: none
 );
 
-// header values (header, inner, logo, ...)
+// (component) logo values
+$logo-display: block;
+$logo-font: (
+  size: 2em,
+  weight: bold,
+);
+
+// (compoenent) header values 
 $header-w: 100%;
 $header-h: 120px;
 $header-border: (
@@ -21,108 +30,208 @@ $header-border: (
 $header-pos: fixed;
 $header-z: 1;
 $header-bg-color: white;
-$inner-w: 1180px;
-$inner-h: $header-h;
-$inner-pos: relative;
-$logo-pos: absolute;
-$logo-posVal: null null 15px 10px;
-$nav-pos: absolute;
-$nav-posVal: null 0px 0px null;
-$util-pos: absolute;
-$util-posVal: 20px 30px null null;
-$nav-a-w: 150px;
-$nav-a-h: $nav-a-w / 3;
-$nav-a-font: (
-  size: $nav-a-h / 5 * 2,
-  height: $nav-a-h,
+$header-values-map: (
+  width: $header-w,
+  //height: $header-h,
+  border: $header-border,
+  position: $header-pos,
+  zIndex: $header-z,
+  bg-color: $header-bg-color,
+);
+
+$header-inner-w: 1180px;
+$header-inner-h: $header-h;
+$header-inner-pos: relative;
+$header-inner-values-map: (
+  width: $header-inner-w,
+  height: $header-inner-h,
+  position: $header-inner-pos,
+);
+
+$header-logo-pos: absolute;
+$header-logo-posVal: null null 15px 10px;
+
+$header-nav-pos: absolute;
+$header-nav-posVal: null 0px 0px null;
+$header-util-pos: absolute;
+$header-util-posVal: 20px 30px null null;
+
+$header-nav-a-w: 150px;
+$header-nav-a-h: $header-nav-a-w / 3;
+$header-nav-a-m: 0px 20px;
+$header-nav-a-font: (
+  size: $header-nav-a-h / 5 * 2,
+  height: $header-nav-a-h,
   color: black,
   align: center,
 );
-$nav-a-m: 0px 20px;
-$nav-a-hover-font: (
+$header-nav-a-values-map: (
+  width: $header-nav-a-w,
+  height: $header-nav-a-h,
+  margin: $header-nav-a-m,
+  font: $header-nav-a-font,
+);
+
+$header-nav-a-hover-font: (
   color: white,
 );
-$nav-a-hover-bg-color: gray;
-$util-li-m: 0px 10px;
-$util-a-font: (
+$header-nav-a-hover-bg-color: gray;
+$header-util-li-m: 0px 10px;
+$header-util-a-font: (
   color: gray,
 );
 
 // index values
-$main-w: 100%;
-$main-h: 590px;
-$main-details: (
+$index-main-w: 100%;
+$index-main-h: 590px;
+$index-main-values-map: (
+  width: $index-main-w,
+  height: $index-main-h,
+);
+$index-main-details: (
   background-size: contain,
   overflow: hidden, // for eliminating margin colllapsing
 );
-$main-inner-w: 800px;
-$main-inner-h: 300px;
-$main-inner-font: (
+
+$index-main-inner-w: 800px;
+$index-main-inner-h: 300px;
+$index-main-inner-values-map: (
+  width: $index-main-inner-w,
+  height: $index-main-inner-h,
+);
+$index-main-inner-font: (
   size: 25px,
   color: white,
 );
-$main-inner-title-font: (
+
+$index-main-inner-title-font: (
   size: 80px,
   weight: 1000,
 );
 
-$isection-w: 1180px;
-$isection-h: 450px;
-$isection-title-w: 100%;
-$isection-title-h: 100px;
-$isection-title-font: (
+$index-section-w: 1180px;
+$index-section-h: 450px;
+$index-section-values-map: (
+  width: $index-section-w,
+  height: $index-section-h,
+);
+
+$index-section-title-w: 100%;
+$index-section-title-h: 100px;
+$index-section-title-font: (
   align: center,
   size: 20px,
   weight: 800,
-  height: $isection-title-h,
+  height: $index-section-title-h,
 );
-$isection-article-w: 230px;
-$isection-article-h: $isection-h - $isection-title-h;
-$isection-article-cnt: 4; // index.html의 section article 개수
-$isection-article-gap: ($isection-w - ($isection-article-cnt * $isection-article-w)) / ($isection-article-cnt - 1);
-$isection-article-m-list: (
-  (0px $isection-article-gap 0px 0px),
-  (0px $isection-article-gap 0px 0px),
-  (0px $isection-article-gap 0px 0px),
+$index-section-title-values-map: (
+  width: $index-section-title-w,
+  height: $index-section-title-h,
+  font: $index-section-title-font,
+);
+
+$index-section-article-w: 230px;
+$index-section-article-h: $index-section-h - $index-section-title-h;
+$index-section-article-cnt: 4; // index.html의 section article 개수
+$index-section-article-gap: ($index-section-w - ($index-section-article-cnt * $index-section-article-w)) / ($index-section-article-cnt - 1);
+$index-section-article-m-list: (
+  (0px $index-section-article-gap 0px 0px),
+  (0px $index-section-article-gap 0px 0px),
+  (0px $index-section-article-gap 0px 0px),
   (0px 0px 0px 0px),
 );
-$isection-article-details: (
+$index-section-article-values-map-list: (
+  (
+    width: $index-section-article-w,
+    height: $index-section-article-h,
+    margin: list.nth($index-section-article-m-list, 1),
+  ),
+  (
+    width: $index-section-article-w,
+    height: $index-section-article-h,
+    margin: list.nth($index-section-article-m-list, 2),
+  ),
+  (
+    width: $index-section-article-w,
+    height: $index-section-article-h,
+    margin: list.nth($index-section-article-m-list, 3),
+  ),
+  (
+    width: $index-section-article-w,
+    height: $index-section-article-h,
+    margin: list.nth($index-section-article-m-list, 4),
+  ),
+);
+$index-section-article-details: (
   float: left,
 );
-$isection-article-h3-h: 40px;
-$isection-article-h3-font: (
-  height: $isection-article-h3-h,
+
+$index-section-article-h3-h: 40px;
+$index-section-article-h3-font: (
+  height: $index-section-article-h3-h,
+);
+$index-section-article-h3-values-map: (
+  height: $index-section-article-h3-h,
+  font: $index-section-article-h3-font,
 );
 
 $footer-w: 100%;
 $footer-bg-color: rgb(23, 23, 49);
-$footer-main-font-color: rgb(137, 137, 137);
+$footer-font-color: rgb(137, 137, 137);
 $footer-font: (
-  color: $footer-main-font-color,
+  color: $footer-font-color,
 );
+$footer-values-map: (
+  width: $footer-w,
+  bg-color: $footer-bg-color,
+  font: $footer-font,
+);
+
 $footer-inner-w: 1000px;
 $footer-inner-h: 100px;
 $footer-inner-pos: relative;
+$footer-inner-values-map: (
+  width: $footer-inner-w,
+  height: $footer-inner-h,
+  position: $footer-inner-pos,
+);
+
 $footer-info-w: $footer-inner-w;
 $footer-info-h: $footer-inner-h * 2;
+$footer-info-values-map: (
+  width: $footer-info-w,
+  height: $footer-info-h,
+);
+
 $footer-info-p-m: 50px 0px 0px 0px;
+$footer-info-p-values-map: (
+  margin: $footer-info-p-m,
+);
+
 $footer-menu-pos: absolute;
 $footer-menu-posVal: null 20px 15px null;
+
 $footer-menu-li-display: inline-block;
 $footer-menu-li-m: 0px 0px 0px 30px; 
 $footer-menu-li-p: 0px 0px 0px 30px; 
 $footer-menu-li-border: (
   dir: left,
-  val: 1px solid $footer-main-font-color,
+  val: 1px solid $footer-font-color,
 );
 $footer-menu-li-font: (
   align: center,
+);
+$footer-menu-li-values-map: (
+  margin: $footer-menu-li-m,
+  padding: $footer-menu-li-p,
+  border: $footer-menu-li-border,
+  font: $footer-menu-li-font,
 );
 $footer-menu-li-details: (
   float: none,
 );
 $footer-menu-li-a-font: (
-  color: $footer-main-font-color,
+  color: $footer-font-color,
 );
 
 // gallery values

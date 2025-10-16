@@ -1,0 +1,73 @@
+@use 'sass:map';
+@use '../constant/mixins' as mix;
+@use '../constant/variables' as var;
+@use '../component/logo' as comp_logo;
+
+@mixin header-configs() {
+  @include mix.create-new-block(var.$header-values-map);
+
+  @content;
+}
+
+@mixin header-inner-configs() {
+  @include mix.create-new-block(var.$header-inner-values-map);
+  @include mix.margin-center;
+  @include mix.relative-set;
+
+  @content;
+}
+
+@mixin header-logo-configs() {
+  @include mix.absolute-set(var.$header-logo-posVal);
+}
+
+@mixin header-nav-configs() {
+  @include mix.absolute-set(var.$header-nav-posVal);
+
+  li a {
+    @include mix.create-new-box(var.$header-nav-a-values-map);
+    @include mix.font-setting(var.$header-nav-a-font);
+
+    &:hover {
+      @include mix.bg-color-set(var.$header-nav-a-hover-bg-color);
+      @include mix.font-setting(var.$header-nav-a-hover-font);
+    }
+  }
+}
+
+@mixin header-utility-configs() {
+  @include mix.absolute-set(var.$header-util-posVal);
+
+  li {
+    @include mix.margin-set(var.$header-util-li-m);
+
+    a {
+      @include mix.font-setting(var.$header-util-a-font);
+    }
+  }
+}
+
+@mixin import-header($fix_option: false) {
+  header {
+    @include header-configs;
+    @if $fix_option == true {
+      @include mix.z100-fix();
+    }
+
+    .inner_box {
+      @include header-inner-configs;
+
+      @include comp_logo.import-logo {
+        @include header-logo-configs;
+      };
+
+      .nav_bar {
+        @include header-nav-configs;
+      }
+
+      .utility_bar {
+        @include header-utility-configs;
+      }
+    }
+  }
+}

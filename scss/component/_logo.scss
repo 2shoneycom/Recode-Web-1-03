@@ -1,0 +1,11 @@
+@use '../constant/mixins' as mix;
+@use '../constant/variables' as var;
+
+@mixin import-logo() {
+  .logo_text {
+    @include mix.block-set;
+    @include mix.font-setting(var.$logo-font);
+
+    @content; // you can add more datils (position, color ...)
+  }
+}

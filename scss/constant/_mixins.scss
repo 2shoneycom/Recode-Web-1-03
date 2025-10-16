@@ -9,41 +9,12 @@
 }
 
 @mixin font-setting($map-values) {
-  font: map.get($map-values, style);
+  font-family: map.get($map-values, style);
   font-size: map.get($map-values, size);
   font-weight: map.get($map-values, weight);
   color: map.get($map-values, color);
   line-height: map.get($map-values, height);
   text-align: map.get($map-values, align);
-}
-
-@mixin display-set($val) {
-  display: $val;
-}
-
-@mixin pos-set($val) {
-  position: $val;
-}
-
-@mixin zIndex-set($val) {
-  z-index: $val;
-}
-
-@mixin block-set($prop, $val) {
-  display: block;
-  #{$prop}: $val;
-}
-
-@mixin margin-set($val) {
-  margin: #{$val};
-}
-
-@mixin padding-set($val) {
-  padding: #{$val};
-}
-
-@mixin margin-center($top-margin: 0px, $bot-margin: 0px) {
-  margin: $top-margin auto $bot-margin;
 }
 
 @mixin details-setting($details-map) {
@@ -65,6 +36,88 @@
   }
 }
 
+@mixin display-set($val) {
+  display: $val;
+}
+
+// (기본 기능) display: block 으로 설정
+// (추가 기능) width, height 설정
+@mixin block-set($width: auto, $height: auto) {
+  @include display-set(block);
+  width: $width;
+  height: $height;
+}
+
+@mixin pos-set($val) {
+  position: $val;
+}
+
+// (기본 기능) position: relative 로 설정
+// (추가 기능) 위치 값 설정
+@mixin relative-set($pos-val: null) {
+  @include pos-set(relative);
+  @if $pos-val != null { @include posVal-setting($pos-val); }
+}
+
+// (기본 기능) position: fixed 로 설정
+// (추가 기능) 위치 값 설정
+@mixin fixed-set($pos-val: null) {
+  @include pos-set(fixed);
+  @if $pos-val != null { @include posVal-setting($pos-val); }
+}
+
+// (기본 기능) position: absolute 로 설정
+// (추가 기능) 위치 값 설정
+@mixin absolute-set($pos-val: null) {
+  @include pos-set(absolute);
+  @if $pos-val != null { @include posVal-setting($pos-val); }
+}
+
+@mixin zIndex-set($val: auto) {
+  z-index: $val;
+}
+
+// (기본 기능) 화면 상에서 고정되고, 앞으로 나오게끔 설정
+@mixin z100-fix() {
+  @include fixed-set();
+  @include zIndex-set(100);
+}
+
+@mixin margin-set($val: auto) {
+  margin: #{$val};
+}
+
+@mixin padding-set($val: auto) {
+  padding: #{$val};
+}
+
+// (기본 기능) 마진을 통한 중앙 정렬
+@mixin margin-center($top-margin: 0px, $bot-margin: 0px) {
+  @include margin-set($top-margin auto $bot-margin);
+}
+
 @mixin bg-color-set($val) {
   background-color: $val;
+}
+
+// (확장 모듈) 새로운 블록 생성과 관련값 설정
+@mixin create-new-block($map-values) {
+  $w: map.get($map-values, width);
+  $h: map.get($map-values, height);
+  $border: map.get($map-values, border);
+  $bg-color: map.get($map-values, bg-color);
+  
+  @include block-set($w, $h);
+  @if $border != null { @include border-setting($border); }
+  @if $bg-color != null { @include bg-color-set($bg-color); }
+}
+
+// (확장 모듈) create-new-block + 마진/패딩 설정
+@mixin create-new-box($map-values) {
+  @include create-new-block($map-values);
+
+  $m: map.get($map-values, margin);
+  $p: map.get($map-values, padding);
+  @if $m != null { @include margin-set($m); }
+  @if $p != null { @include padding-set($p); }
 }
