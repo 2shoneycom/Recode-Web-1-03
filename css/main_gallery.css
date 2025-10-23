@@ -55,21 +55,19 @@ header .inner_box .utility_bar li a {
 }
 
 section {
+  display: block;
   width: 1000px;
-  padding-top: 120px;
+  padding: 120px 0px 0px 0px;
   margin: 0px auto 0px;
 }
 section article {
-  float: left;
   position: relative;
   color: white;
+  float: left;
 }
 section .art1 {
   display: block;
-  width: width;
-  height: 700px;
-  display: block;
-  width: height;
+  width: 700px;
   height: 400px;
   margin: 10px 0px 10px 0px;
 }
@@ -81,10 +79,7 @@ section .art1 p {
 }
 section .art2 {
   display: block;
-  width: width;
-  height: 290px;
-  display: block;
-  width: height;
+  width: 290px;
   height: 190px;
   margin: 10px 0px 10px 10px;
 }
@@ -95,10 +90,7 @@ section .art2 p {
 }
 section .art3 {
   display: block;
-  width: width;
-  height: 290px;
-  display: block;
-  width: height;
+  width: 290px;
   height: 95px;
   margin: 0px 0px 10px 10px;
 }
@@ -112,16 +104,12 @@ section .art3:nth-child(2) p {
 }
 section .container_3 {
   display: block;
-  width: width;
-  height: 300px;
+  width: 300px;
   float: left;
 }
 section .art4 {
   display: block;
-  width: width;
-  height: 490px;
-  display: block;
-  width: height;
+  width: 490px;
   height: 240px;
   margin: 0px 0px 10px 0px;
 }
@@ -140,16 +128,12 @@ section .art4:nth-child(2) p {
 }
 section .container_4 {
   display: block;
-  width: width;
-  height: 500px;
+  width: 500px;
   float: left;
 }
 section .art5 {
   display: block;
-  width: width;
-  height: 500px;
-  display: block;
-  width: height;
+  width: 500px;
   height: 490px;
   margin: 0px 0px 10px 0px;
 }
@@ -158,10 +142,7 @@ section .art5 p {
 }
 section .art6 {
   display: block;
-  width: width;
-  height: 1000px;
-  display: block;
-  width: height;
+  width: 1000px;
   height: 371px;
   margin: 0px 0px 10px 0px;
 }
@@ -174,10 +155,7 @@ section .art6 p {
 }
 section .art7 {
   display: block;
-  width: width;
-  height: 1000px;
-  display: block;
-  width: height;
+  width: 1000px;
   height: 361px;
   margin: 0px 0px 50px 0px;
 }

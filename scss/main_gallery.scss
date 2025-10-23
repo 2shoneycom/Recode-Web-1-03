@@ -3,32 +3,27 @@
 
 @include lib.import-header($fix_option: true);
 
-// 해야할 것
-// 여기서부터 다시 만지기
 section {
-  width: lib.$section-w;
-  padding-top: lib.$header-h;
+  @include lib.create-new-box(lib.$gallery-section-values-map);
   @include lib.margin-center;
 
   article {
-    float: left;
-    position: relative;
-    color: white;
+    @include lib.relative-set;
+    @include lib.font-setting(lib.$gallery-article-font);
+    @include lib.details-setting(lib.$gallery-article-details);
   }
 
   // set .art#n class width, height
-  $cnt_articles: list.length(lib.$article-m-list);
+  $cnt_articles: list.length(lib.$gallery-article-m-list);
 
   @for $i from 1 through $cnt_articles {
     .art#{$i} {
-      @include lib.block-set(width, list.nth(lib.$article-w, $i));
-      @include lib.block-set(height, list.nth(lib.$article-h, $i));
-      @include lib.margin-set(list.nth(lib.$article-m-list, $i));
+      @include lib.create-new-box(list.nth(lib.$gallery-article-values-map-list, $i));
 
-      $pos-list: list.nth(lib.$article-p-pos-list, $i);
-      $pos-val-list: list.nth(lib.$article-p-posVal-list, $i);
-      $p-details: list.nth(lib.$article-p-details, $i);
-      $p-span-details: list.nth(lib.$article-p-span-details, $i);
+      $pos-list: list.nth(lib.$gallery-article-p-pos-list, $i);
+      $pos-val-list: list.nth(lib.$gallery-article-p-posVal-list, $i);
+      $p-details: list.nth(lib.$gallery-article-p-details, $i);
+      $p-span-details: list.nth(lib.$gallery-article-p-span-details, $i);
 
       $cnt_sub_articles: list.length($pos-list);
 
@@ -58,9 +53,9 @@ section {
       }
     }
 
-    @if list.nth(lib.$article-container-necessary, $i)==1 {
+    @if list.nth(lib.$gallery-article-container-necessary, $i)==1 {
       .container_#{$i} {
-        @include lib.block-set(width, calc(list.nth(lib.$article-w, $i) + lib.$article-gap));
+        @include lib.create-new-block((width: calc(list.nth(lib.$gallery-article-w, $i) + lib.$gallery-article-gap)));
         float: left;
       }
     }

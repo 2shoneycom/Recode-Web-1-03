@@ -235,14 +235,26 @@ $footer-menu-li-a-font: (
 );
 
 // gallery values
-$section-w: 1000px;
+$gallery-section-w: 1000px;
+$gallery-section-p: $header-h 0px 0px 0px;
+$gallery-section-values-map: (
+  width: $gallery-section-w,
+  padding: $gallery-section-p,
+);
 
-$article-w: 700px 290px 290px 490px 500px 1000px 1000px;
-$article-h: 400px 190px 95px 240px 490px 371px 361px;
-$article-gap: calc($section-w - 990px);
-$article-basic-m: 10px;
+$gallery-article-font: (
+  color: white,
+);
+$gallery-article-details: (
+  float: left,
+);
 
-$article-m-list: (
+$gallery-article-w: 700px 290px 290px 490px 500px 1000px 1000px;
+$gallery-article-h: 400px 190px 95px 240px 490px 371px 361px;
+$gallery-article-gap: calc($gallery-section-w - 990px);
+$gallery-article-basic-m: 10px;
+
+$gallery-article-m-list: (
   (10px 0px 10px 0px),          // art#1's margin
   (10px 0px 10px 10px),         // art#2's margin
   (0px 0px 10px 10px),          // art#3's margin
@@ -252,7 +264,45 @@ $article-m-list: (
   (0px 0px 50px 0px),           // art#7's margin
 );
 
-$article-container-necessary: (
+$gallery-article-values-map-list: (
+  (
+    width: list.nth($gallery-article-w, 1),
+    height: list.nth($gallery-article-h, 1),
+    margin: list.nth($gallery-article-m-list, 1),
+  ),
+  (
+    width: list.nth($gallery-article-w, 2),
+    height: list.nth($gallery-article-h, 2),
+    margin: list.nth($gallery-article-m-list, 2),
+  ),
+  (
+    width: list.nth($gallery-article-w, 3),
+    height: list.nth($gallery-article-h, 3),
+    margin: list.nth($gallery-article-m-list, 3),
+  ),
+  (
+    width: list.nth($gallery-article-w, 4),
+    height: list.nth($gallery-article-h, 4),
+    margin: list.nth($gallery-article-m-list, 4),
+  ),
+  (
+    width: list.nth($gallery-article-w, 5),
+    height: list.nth($gallery-article-h, 5),
+    margin: list.nth($gallery-article-m-list, 5),
+  ),
+  (
+    width: list.nth($gallery-article-w, 6),
+    height: list.nth($gallery-article-h, 6),
+    margin: list.nth($gallery-article-m-list, 6),
+  ),
+  (
+    width: list.nth($gallery-article-w, 7),
+    height: list.nth($gallery-article-h, 7),
+    margin: list.nth($gallery-article-m-list, 7),
+  ),
+);
+
+$gallery-article-container-necessary: (
   0,    // container need? art#1
   0,    // container need? art#2
   1,    // container need? art#3
@@ -262,7 +312,7 @@ $article-container-necessary: (
   0,    // container need? art#7
 );
 
-$article-p-pos-list: (
+$gallery-article-p-pos-list: (
   absolute,           // (art#1 p)'s position
   absolute,           // (art#2 p)'s position 
   (absolute, static), // (art#3 p)'s position
@@ -272,7 +322,7 @@ $article-p-pos-list: (
   absolute,           // (art#7 p)'s position
 );
 
-$article-p-posVal-list: (
+$gallery-article-p-posVal-list: (
 // (top, right, bottom, left)
   (null, 10px, 10px, null),   // (art#1 p)'s position value
   (50px, null, null, 10px),   // (art#2 p)'s position value
@@ -290,7 +340,7 @@ $article-p-posVal-list: (
 );
 
 // 그 외 세부 설정값들
-$article-p-details: (
+$gallery-article-p-details: (
   (font-size: 30px),
   null,
   (
@@ -306,7 +356,7 @@ $article-p-details: (
   (width: 450px, height: 150px, font-size: 20px)
 );
 
-$article-p-span-details: (
+$gallery-article-p-span-details: (
   null,             // art#1
   null,             // art#2
   null,             // art#3
